@@ -10,3 +10,4 @@ Essential parts:
   - iCE40HX4
   - TPS65185
   - ESP8266
+  - Molex 502598-3993 	http://ro.mouser.com/ProductDetail/Molex/502598-3993
