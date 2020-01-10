@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -10461,7 +10461,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="TP17" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP18" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP19" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="TP20" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="GND" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP21" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP22" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="L1" library="parts-ferrocore" library_urn="urn:adsk.eagle:library:7633163" deviceset="DJNR3015" device="" package3d_urn="urn:adsk.eagle:package:7661088/2" value="2.2uH"/>
@@ -10628,7 +10628,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="NAME" x="46.99" y="111.76" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="44.45" y="110.49" size="1.778" layer="97" rot="R270"/>
 </instance>
-<instance part="TP20" gate="G$1" x="45.72" y="116.84" smashed="yes" rot="R270">
+<instance part="GND" gate="G$1" x="45.72" y="116.84" smashed="yes" rot="R270">
 <attribute name="NAME" x="46.99" y="116.84" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="44.45" y="115.57" size="1.778" layer="97" rot="R270"/>
 </instance>
@@ -10704,7 +10704,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="J1" gate="G$1" pin="5"/>
 <wire x1="30.48" y1="116.84" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
 <label x="40.64" y="116.84" size="1.778" layer="95" align="bottom-right"/>
-<pinref part="TP20" gate="G$1" pin="TP"/>
+<pinref part="GND" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="SHLD"/>
@@ -11196,6 +11196,11 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="91.44" y1="127" x2="73.66" y2="127" width="0.1524" layer="91"/>
 <label x="73.66" y="127" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="VCOM_CTRL"/>
+<wire x1="111.76" y1="66.04" x2="96.52" y2="66.04" width="0.1524" layer="91"/>
+<label x="93.98" y="66.04" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -11584,7 +11589,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="175.26" y1="116.84" x2="175.26" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="NTC_SENSE" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="U1" gate="G$1" pin="TS"/>
@@ -11735,11 +11740,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </segment>
 </net>
 <net name="VCOM_CTRL" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="VCOM_CTRL"/>
-<wire x1="111.76" y1="66.04" x2="96.52" y2="66.04" width="0.1524" layer="91"/>
-<label x="93.98" y="66.04" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="VCOM_CTRL" gate="G$1" pin="TP"/>
 <wire x1="236.22" y1="86.36" x2="228.6" y2="86.36" width="0.1524" layer="91"/>
